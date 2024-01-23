@@ -34,9 +34,9 @@ label {
 
 /* Container */
 .container {
-  width: 318px;
+  max-width: 318px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 /* Header */
@@ -286,14 +286,15 @@ label {
 
 .team-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  /* Space-betwen */
   gap: 72px;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
 .team-list-item {
-  max-width: 264px;
+  width: calc((100% - 24px) / 2);
   background-color: #fff;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
@@ -356,7 +357,6 @@ label {
 
 /* Portfolio */
 .portfolio {
-  /* padding: 120px 0; */
   padding: 96px 0;
 }
 
@@ -381,7 +381,6 @@ label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* gap: 48px 24px; */
   gap: 48px;
   margin: 0 auto;
 }
@@ -390,7 +389,7 @@ label {
   max-width: 288px;
   position: relative;
   flex-shrink: 0;
-  background: var(--WHITE, #fff);
+  background: #fff;
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -421,8 +420,6 @@ label {
 .portfolio-box {
   position: relative;
   overflow: hidden;
-  width: 288px;
-  height: 280px;
 }
 
 .overlay {
@@ -447,12 +444,13 @@ label {
 
 /* Footer */
 .footer {
-  padding: 100px 0;
+  padding: 96px 0;
   background-color: #2e2f42;
 }
 
 .footer-text {
   max-width: 264px;
+  margin-bottom: 72px;
 
   color: #f4f4fd;
   font-size: 16px;
@@ -465,7 +463,8 @@ label {
 }
 
 .footer-logo {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 16px;
 
   color: #4d5ae5;
@@ -488,11 +487,12 @@ label {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  justify-content: center;
 }
 
 .footer-social-list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -511,6 +511,7 @@ label {
   background-color: #4d5ae5;
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 72px;
 }
 
 .footer-social-link:hover,
@@ -520,11 +521,8 @@ label {
 
 .footer-container {
   display: flex;
+  flex-direction: column;
   align-items: baseline;
-}
-
-.container-logo {
-  margin-right: 120px;
 }
 
 .container-media {
@@ -534,7 +532,9 @@ label {
 /* Form */
 .footer-form {
   display: flex;
-  gap: 24px;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-label {
@@ -545,6 +545,7 @@ label {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .form-button {
@@ -845,7 +846,7 @@ label {
 /* Media */
 @media screen and (min-width: 768px) {
   .container {
-    width: 766px;
+    max-width: 768px;
   }
 
   .advantages-list {
@@ -862,15 +863,16 @@ label {
 
   /* Team */
   .team > .container {
-    width: 674px;
+    width: 583px;
   }
 
   .team-list {
     gap: 64px 24px;
+    justify-content: center;
   }
 
   .team-list-item {
-    max-width: calc((100% - 24px) / 2);
+    width: calc((100% - 24px) / 2);
   }
 
   /* Portfolio */
@@ -878,14 +880,38 @@ label {
     gap: 72px 24px;
   }
 
-  .team-list-item {
-    max-width: calc((100% - 24px) / 2);
+  .portfolio-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-form {
+    flex-direction: row;
+  }
+
+  .footer-label {
+    text-align: start;
+  }
+
+  .footer-social-link {
+    margin-bottom: 0;
+  }
+
+  .footer-form {
+    gap: 24px;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .container {
-    width: 1158px;
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .advantages {
@@ -930,7 +956,43 @@ label {
   .team-list {
     gap: 24px;
   }
+
   .team-list-item {
     max-width: calc((100% - 72px) / 4);
+  }
+
+  /* Portfolio */
+  .portfolio {
+    padding: 120px 0;
+  }
+
+  .portfolio-list {
+    gap: 48px 24px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 48px) / 3);
+  }
+
+  /* Footer */
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer-social-text {
+    justify-content: flex-start;
+  }
+
+  .footer-social-list {
+    justify-content: center;
+    margin-right: 80px;
+  }
+
+  .footer-logo {
+    justify-content: flex-start;
+  }
+
+  .container-logo {
+    margin-right: 120px;
   }
 }
