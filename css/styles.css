@@ -27,6 +27,8 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 label {
   display: block;
@@ -404,9 +406,12 @@ label {
   padding: 96px 0;
 }
 
-.team > .container {
-  max-width: 320px;
+@media screen and (max-width: 767px) {
+  .team > .container {
+    max-width: 296px;
+  }
 }
+
 .team-name {
   margin-bottom: 72px;
 
@@ -588,9 +593,12 @@ label {
   background-color: #2e2f42;
 }
 
+.container-logo {
+  margin-bottom: 72px;
+}
+
 .footer-text {
   max-width: 264px;
-  margin-bottom: 72px;
 
   color: #f4f4fd;
   font-size: 16px;
@@ -618,7 +626,7 @@ label {
 
 .footer-social-text {
   display: flex;
-  width: 264px;
+  width: 100%;
   margin-bottom: 16px;
 
   color: #fff;
@@ -634,6 +642,9 @@ label {
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.container-media {
   margin-bottom: 72px;
 }
 
@@ -662,11 +673,7 @@ label {
 .footer-container {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-}
-
-.container-media {
-  margin-right: 0;
+  align-items: center;
 }
 
 /* Form */
@@ -1111,8 +1118,9 @@ label {
   .footer-form {
     gap: 24px;
   }
-  .footer-social-list {
-    margin-bottom: 0;
+
+  .container-logo {
+    margin-right: 24px;
   }
 
   /* Backdrop */
@@ -1129,6 +1137,12 @@ label {
   .label-span {
     display: flex;
     align-items: flex-end;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-container {
+    width: 584px;
   }
 }
 
@@ -1205,6 +1219,9 @@ label {
     max-width: calc((100% - 72px) / 4);
   }
 
+  .advantages-item-text {
+    font-weight: unset;
+  }
   .advantages-item-name {
     font-size: 20px;
     font-weight: 500;
@@ -1251,8 +1268,7 @@ label {
   }
 
   .footer-social-list {
-    justify-content: center;
-    margin-right: 80px;
+    justify-content: flex-start;
   }
 
   .footer-logo {
@@ -1261,5 +1277,11 @@ label {
 
   .container-logo {
     margin-right: 120px;
+    margin-bottom: 0;
+  }
+
+  .container-media {
+    margin-right: 80px;
+    margin-bottom: 0;
   }
 }
